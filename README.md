@@ -37,7 +37,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Vercel](https://browser-extensions-manager-ui-main.vercel.app/)
+- Solution URL: [Vercel](https://browser-extensions-manager-ui-main-mu.vercel.app/)
 - Live Site URL: [mmalabugin.ru/BrowserExtensionsManagerUI](https://mmalabugin.ru/BrowserExtensionsManagerUI/)
 
 ## My process
