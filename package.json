@@ -1,0 +1,28 @@
+{
+  "name": "browser-extensions-manager-ui-main",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "marko-run dev",
+    "build": "marko-run build",
+    "preview": "marko-run preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "marko": "^6.4.10"
+  },
+  "devDependencies": {
+    "@marko/run": "^0.11.17",
+    "@marko/run-adapter-static": "^2.0.11",
+    "@marko/testing-library": "^6.4.2",
+    "@marko/vite": "^6.1.13",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/user-event": "^14.6.8",
+    "jsdom": "^29.1.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.6",
+    "vitest": "^5.1.0"
+  }
+}

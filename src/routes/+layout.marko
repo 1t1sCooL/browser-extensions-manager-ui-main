@@ -1,0 +1,28 @@
+import "../app/styles/index.css";
+import { assetUrl } from "../shared/config/assets";
+import { DEFAULT_THEME, themeInitScript } from "../features/toggle-theme";
+
+<!doctype html>
+<html lang="en" data-theme=DEFAULT_THEME>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Browser extensions manager UI: toggle, filter and remove extensions with a light and dark theme."
+    >
+    <title>Frontend Mentor | Browser extensions manager UI</title>
+    <link rel="icon" type="image/png" sizes="32x32" href=assetUrl("images/favicon-32x32.png")>
+    <link
+      rel="preload"
+      href=assetUrl("fonts/NotoSans-latin.woff2")
+      as="font"
+      type="font/woff2"
+      crossorigin
+    >
+    <html-script>${themeInitScript}</html-script>
+  </head>
+  <body>
+    <${input.content}/>
+  </body>
+</html>

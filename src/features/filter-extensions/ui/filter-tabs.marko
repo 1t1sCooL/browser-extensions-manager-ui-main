@@ -1,0 +1,25 @@
+import "./filter-tabs.css";
+import { DEFAULT_FILTER, FILTER_OPTIONS, type ExtensionFilter } from "../model/filter";
+
+export interface Input {
+  value?: ExtensionFilter;
+  valueChange?: (value: ExtensionFilter) => void;
+}
+
+<let/value:=input.value>
+<const/selected=value ?? DEFAULT_FILTER>
+
+<div class="filter-tabs" role="group" aria-label="Filter extensions">
+  <for|option| of=FILTER_OPTIONS by="value">
+    <button
+      class="filter-tabs__option"
+      type="button"
+      aria-pressed=(option.value === selected ? "true" : "false")
+      onClick() {
+        value = option.value;
+      }
+    >
+      ${option.label}
+    </button>
+  </for>
+</div>

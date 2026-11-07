@@ -1,0 +1,20 @@
+import "./toggle-switch.css";
+export interface Input {
+  checked: boolean;
+  label: string;
+  checkedChange?: (checked: boolean) => void;
+}
+
+<label class="switch">
+  <input
+    class="switch__input"
+    type="checkbox"
+    role="switch"
+    aria-label=input.label
+    checked=input.checked
+    checkedChange(checked) {
+      input.checkedChange?.(checked);
+    }
+  >
+  <span class="switch__track" aria-hidden="true"/>
+</label>

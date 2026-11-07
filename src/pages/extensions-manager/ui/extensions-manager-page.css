@@ -1,0 +1,32 @@
+.page {
+  inline-size: min(100% - 2rem, 73.125rem);
+  margin-inline: auto;
+  padding-block-start: 2.5rem;
+}
+
+.page__main {
+  padding-block-start: 4rem;
+}
+
+.attribution {
+  padding-block: 1.5rem;
+  font-size: 0.6875rem;
+  line-height: 1;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.attribution a {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+@media (max-width: 40em) {
+  .page {
+    padding-block-start: 1.5rem;
+  }
+
+  .page__main {
+    padding-block-start: 2.3125rem;
+  }
+}

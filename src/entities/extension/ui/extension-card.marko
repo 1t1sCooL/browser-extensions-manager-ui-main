@@ -1,0 +1,47 @@
+import "./extension-card.css";
+import ToggleSwitch from "../../../shared/ui/toggle-switch/toggle-switch.marko";
+import type { Extension } from "../model/types";
+
+export interface Input {
+  extension: Extension;
+  onToggle?: (isActive: boolean) => void;
+  onRemove?: () => void;
+}
+
+<article class="extension-card" aria-labelledby=`${input.extension.id}-name`>
+  <div class="extension-card__body">
+    <img
+      class="extension-card__logo"
+      src=input.extension.logo
+      alt=""
+      width="60"
+      height="60"
+      decoding="async"
+    >
+    <div class="extension-card__text">
+      <h2 class="extension-card__name" id=`${input.extension.id}-name`>
+        ${input.extension.name}
+      </h2>
+      <p class="extension-card__description">${input.extension.description}</p>
+    </div>
+  </div>
+  <div class="extension-card__actions">
+    <button
+      class="extension-card__remove"
+      type="button"
+      aria-label=`Remove ${input.extension.name}`
+      onClick() {
+        input.onRemove?.();
+      }
+    >
+      Remove
+    </button>
+    <ToggleSwitch
+      checked=input.extension.isActive
+      label=`${input.extension.name} enabled`
+      checkedChange(isActive) {
+        input.onToggle?.(isActive);
+      }
+    />
+  </div>
+</article>

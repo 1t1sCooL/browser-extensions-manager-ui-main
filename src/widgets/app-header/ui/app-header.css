@@ -1,0 +1,27 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6875rem 0.9375rem;
+  border: 0.0625rem solid var(--header-border);
+  border-radius: var(--radius-surface);
+  background: var(--surface);
+  box-shadow: var(--surface-shadow);
+}
+
+.logo {
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.logo__mark {
+  fill: var(--logo-mark);
+}
+
+@media (max-width: 40em) {
+  .app-header {
+    padding: 0.4375rem 0.6875rem;
+    border-radius: var(--radius-control);
+  }
+}

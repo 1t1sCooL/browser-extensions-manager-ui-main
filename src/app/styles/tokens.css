@@ -1,0 +1,98 @@
+:root {
+  --neutral-900: hsl(227 75% 14%);
+  --neutral-800: hsl(226 25% 17%);
+  --neutral-700: hsl(225 23% 24%);
+  --neutral-600: hsl(226 11% 37%);
+  --neutral-300: hsl(0 0% 78%);
+  --neutral-200: hsl(217 61% 90%);
+  --neutral-100: hsl(0 0% 93%);
+  --neutral-0: hsl(200 60% 99%);
+
+  --red-400: hsl(3 86% 64%);
+  --red-500: hsl(3 71% 56%);
+  --red-700: hsl(3 77% 44%);
+
+  --gradient-light: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --gradient-dark: linear-gradient(180deg, #040918 0%, #091540 100%);
+
+  --font-family: "Noto Sans", system-ui, sans-serif;
+
+  --radius-surface: 1.25rem;
+  --radius-control: 0.75rem;
+  --radius-pill: 62.4375rem;
+
+  --duration: 0.2s;
+}
+
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --page-bg: var(--gradient-dark);
+  --page-bg-fallback: #040918;
+  --text: var(--neutral-0);
+  --text-muted: var(--neutral-300);
+
+  --surface: var(--neutral-800);
+  --surface-border: var(--neutral-600);
+  --header-border: var(--neutral-800);
+  --surface-shadow: none;
+
+  --logo-mark: var(--red-400);
+
+  --control-bg: var(--neutral-700);
+  --control-bg-hover: var(--neutral-600);
+  --control-text-hover: var(--neutral-0);
+
+  --pill-bg: var(--neutral-700);
+  --pill-border: var(--neutral-600);
+  --pill-shadow: none;
+
+  --remove-bg: transparent;
+  --remove-border: var(--neutral-600);
+  --remove-bg-focus: var(--neutral-600);
+
+  --accent: var(--red-400);
+  --accent-hover: var(--red-500);
+  --on-accent: var(--neutral-900);
+
+  --ring: var(--red-400);
+  --switch-off: var(--neutral-600);
+  --switch-knob: var(--neutral-0);
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  --page-bg: var(--gradient-light);
+  --page-bg-fallback: #ebf2fc;
+  --text: var(--neutral-900);
+  --text-muted: var(--neutral-600);
+
+  --surface: var(--neutral-0);
+  --surface-border: var(--neutral-200);
+  --header-border: var(--neutral-200);
+  --surface-shadow: 0 0.125rem 0.1875rem hsl(217 50% 72% / 0.3);
+
+  --logo-mark: var(--red-700);
+
+  --control-bg: var(--neutral-100);
+  --control-bg-hover: var(--neutral-300);
+  --control-text-hover: var(--neutral-600);
+
+  --pill-bg: var(--neutral-0);
+  --pill-border: var(--neutral-200);
+  --pill-shadow: 0 0.0625rem 0.125rem hsl(217 50% 72% / 0.3);
+
+  --remove-bg: var(--neutral-0);
+  --remove-border: var(--neutral-300);
+  --remove-bg-focus: var(--neutral-100);
+
+  --accent: var(--red-700);
+  --accent-hover: var(--red-500);
+  --on-accent: var(--neutral-0);
+
+  --ring: var(--red-700);
+  --switch-off: var(--neutral-300);
+  --switch-knob: var(--neutral-0);
+}

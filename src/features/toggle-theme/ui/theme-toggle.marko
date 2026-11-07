@@ -1,0 +1,31 @@
+import "./theme-toggle.css";
+import IconSun from "../../../shared/ui/icons/icon-sun.marko";
+import IconMoon from "../../../shared/ui/icons/icon-moon.marko";
+import {
+  DEFAULT_THEME,
+  applyTheme,
+  nextTheme,
+  readTheme,
+  themeActionLabel,
+  type Theme,
+} from "../model/theme";
+
+<let/theme=(DEFAULT_THEME as Theme)>
+<lifecycle
+  onMount() {
+    theme = readTheme();
+  }
+/>
+
+<button
+  class="theme-toggle"
+  type="button"
+  aria-label=themeActionLabel(theme)
+  onClick() {
+    theme = nextTheme(theme);
+    applyTheme(theme);
+  }
+>
+  <IconSun class="theme-toggle__icon theme-toggle__icon--sun"/>
+  <IconMoon class="theme-toggle__icon theme-toggle__icon--moon"/>
+</button>

@@ -1,0 +1,57 @@
+import "./extensions-board.css";
+import ExtensionCard from "../../../entities/extension/ui/extension-card.marko";
+import {
+  loadInitialExtensions,
+  removeExtension,
+  setExtensionActive,
+  type Extension,
+} from "../../../entities/extension";
+import FilterTabs from "../../../features/filter-extensions/ui/filter-tabs.marko";
+import {
+  DEFAULT_FILTER,
+  emptyFilterMessage,
+  filterExtensions,
+  type ExtensionFilter,
+} from "../../../features/filter-extensions";
+import { removedMessage, toggledMessage } from "../model/announcements";
+
+export interface Input {
+  extensions?: Extension[];
+}
+
+<let/extensions=(input.extensions ?? loadInitialExtensions())>
+<let/filter=(DEFAULT_FILTER as ExtensionFilter)>
+<let/announcement="">
+<const/visible=filterExtensions(extensions, filter)>
+
+<section class="extensions-board" aria-labelledby="extensions-board-title">
+  <div class="extensions-board__toolbar">
+    <h1 class="extensions-board__title" id="extensions-board-title">Extensions List</h1>
+    <FilterTabs value:=filter/>
+  </div>
+
+  <if=visible.length>
+    <ul class="extensions-board__grid" role="list">
+      <for|extension| of=visible by="id">
+        <li class="extensions-board__item">
+          <ExtensionCard
+            extension=extension
+            onToggle(isActive) {
+              extensions = setExtensionActive(extensions, extension.id, isActive);
+              announcement = toggledMessage(extension.name, isActive);
+            }
+            onRemove() {
+              extensions = removeExtension(extensions, extension.id);
+              announcement = removedMessage(extension.name);
+            }
+          />
+        </li>
+      </for>
+    </ul>
+  </if>
+  <else>
+    <p class="extensions-board__empty">${emptyFilterMessage(filter)}</p>
+  </else>
+
+  <p class="visually-hidden" role="status">${announcement}</p>
+</section>
